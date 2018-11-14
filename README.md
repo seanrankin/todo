@@ -1,44 +1,43 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Sean Rankin's Coding Exercise
 
-## Available Scripts
+### My thought process
 
-In the project directory, you can run:
+This challenge was a little unique as I needed to stay under the 4 hour time limit. With that in mind, the first decision I made was to bootstrap the project with Create React App (rather than spending half the time configuring all the tooling).
 
-### `npm start`
+Next I pulled out a sheet of paper and sketched out a quick workflow of the app and it's basic requirements. This allowed me to wireframe out the components I'd need, and the associated interactions. This allowed me to pretty quickly come up with the actions (and associated reducers) I'd need to build.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+After that, I stubbed out the files with stateless components, and SASS files. I find it's easier to think about components when they have a red border and the name of the component on displayed on the screen.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Next I stubbed out the tests and expectations for the components, along with the reducer. I don't typically test Redux actions explicitly as that's covered pretty well in the reducer test.
 
-### `npm test`
+Once the app and test were stubbed out, I began working the the components. I started with the App and worked my way inward. Some of my test expectations changed along the way, but I basically filled out a test expectation for each element on the page, then added the element to the component. I ran Jest in watch mode as I built so I could see the test progress on my second monitor.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Finally, I wrote the actions and passed them around to the components that needed them. For a product (or feature) of this size, I've found that it ends up being a little easier to do this last.
 
-### `npm run build`
+I seeded the app with a few to-dos, just for the heck of it, but feel free to delete them and create your own!
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Remaining Items
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+I bunch of stuff would need to be done before this little app was ready for prime time.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+##### Data
+Right now, I'm just storing the app data in Redux, and that wouldn't be very helpful in the real world, so I'd need to hook it up to an API and database. I usually add the API endpoints in an /api folder and call them from the actions. Typically I use Axios to make manage the API endpoints.
 
-### `npm run eject`
+##### UI
+The UI needs some finesse. I thought it would be fun to pay tribute to the iOS reminder list, but in the time allotted, I didn't nail it. It's not ready for prime time. I had to substitute fonts and grab a freebie paper background.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+##### CSS
+The CSS is kinda messy. It could use some optimization. I like to group properties in that relate to each other (size/shape/color). Also, I typically define UI constants like a color palette, border radius, etc in SASS or LESS variables, and import them into other SASS files, but didn't get around to that in the time I had.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+##### UI Testing
+I would throughly test the UI on many different platforms and browsers. BrowserStack is my go to tool for this. I only tested the app in the latest versions Safari and Chrome. Additionally, the site would need to be tested for accessibility.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+##### Tests
+I got the code coverage % pretty high, but there are some edge cases that could use some tests.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+If you want to check out the coverage report:
+```
+yarn run coverage
+```
+Then view the report here:
+todo/coverage/lcov-report/src/components/index.html

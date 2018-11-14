@@ -1,0 +1,56 @@
+.root {
+  padding: 7px;
+  display: flex;
+}
+
+.form {
+  flex: 0 0 30px;
+}
+
+.item {
+  flex: 1 1 auto;
+}
+
+.delete {
+  flex: 0 0 30px;
+  margin-top: 7px;
+  cursor: pointer;
+}
+
+.hr {
+  border: none;
+  height: 1px;
+  background-color: #cbcbcb;
+}
+
+.complete {
+  color: #8f8e93;
+}
+
+.label {
+  line-height: 1.8em;
+}
+
+.created {
+  color: #8f8e93;
+  font-size: 0.9em;
+}
+
+.checkbox {
+  appearance: none;
+  height: 24px;
+  width: 24px;
+  border: 1px #8f8e93 solid;
+  border-radius: 50px;
+  cursor: pointer;
+  margin: 12px 14px 0 0;
+  outline: none;
+}
+
+.checkbox:hover {
+  background-color: #23a6f8;
+}
+
+.checkbox:checked {
+  background-color: #23a6f8;
+}

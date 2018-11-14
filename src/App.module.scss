@@ -1,0 +1,33 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.list {
+  background-image: url('/paper.jpg');
+  border-radius: 10px;
+  padding: 16px;
+  max-height: 80%;
+  overflow-y: scroll;
+}
+
+.header {
+  display: flex;
+  color: #23a6f8;
+  font-size: 1.5em;
+  margin-bottom: 8px;
+}
+
+.title {
+  flex: 1 1 auto;
+  margin-left: 45px;
+}
+
+.count {
+  flex: 0 0 30px;
+}
